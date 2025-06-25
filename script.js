@@ -45,27 +45,16 @@ function updateScore() {
     scoreText.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
 }
 
-rockBtn.addEventListener('click', () => {
+function handleChoice(playerChoice) {
     let computerChoice = getComputerChoice();
-    let roundResult = playRound("rock", computerChoice);
+    let roundResult = playRound(playerChoice, computerChoice);
     
     resultText.textContent = roundResult;
     updateScore();
-});
+}
 
-paperBtn.addEventListener('click', () => {
-    let computerChoice = getComputerChoice();
-    let roundResult = playRound("paper", computerChoice);
+rockBtn.addEventListener('click', () => handleChoice("rock"));
 
-    
-    resultText.textContent = roundResult;
-    updateScore();
-});
+paperBtn.addEventListener('click', () => handleChoice("paper"));
 
-scissorsBtn.addEventListener('click', () => {
-    let computerChoice = getComputerChoice();
-    let roundResult = playRound("scissors", computerChoice);
-    
-    resultText.textContent = roundResult;
-    updateScore();
-});
+scissorsBtn.addEventListener('click', () => handleChoice("scissors"));
