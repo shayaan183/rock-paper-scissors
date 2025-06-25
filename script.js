@@ -41,20 +41,38 @@ const scissorsBtn = document.querySelector("#scissors");
 const scoreText = document.querySelector("#score");
 const resultText = document.querySelector("#result");
 
-function updateScore() {
-    scoreText.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
-}
+rockBtn.addEventListener('click', () => handleChoice("rock"));
+paperBtn.addEventListener('click', () => handleChoice("paper"));
+scissorsBtn.addEventListener('click', () => handleChoice("scissors"));
 
 function handleChoice(playerChoice) {
+    if (checkWin()) {
+        gameOver();
+    }
+
     let computerChoice = getComputerChoice();
     let roundResult = playRound(playerChoice, computerChoice);
     
     resultText.textContent = roundResult;
     updateScore();
+
+    if (checkWin()) {
+        gameOver();
+    }
 }
 
-rockBtn.addEventListener('click', () => handleChoice("rock"));
+function updateScore() {
+    scoreText.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
+}
 
-paperBtn.addEventListener('click', () => handleChoice("paper"));
+function gameOver() {
+    if (humanScore > computerScore) {
+        resultText.textContent = "You won the game! (Refresh to play again)";
+    } else {
+        resultText.textContent = "You lost the game! (Refresh to play again)";
+    }
 
-scissorsBtn.addEventListener('click', () => handleChoice("scissors"));
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+}
