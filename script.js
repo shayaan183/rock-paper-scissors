@@ -38,7 +38,10 @@ function checkWin() {
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
-const scoreText = document.querySelector("#score");
+const playerIcon = document.querySelector("#player-icon");
+const playerScoreText = document.querySelector("#player-score");
+const computerIcon = document.querySelector("#computer-icon");
+const computerScoreText = document.querySelector("#computer-score");
 const resultText = document.querySelector("#result");
 
 rockBtn.addEventListener('click', () => handleChoice("rock"));
@@ -55,6 +58,7 @@ function handleChoice(playerChoice) {
     
     resultText.textContent = roundResult;
     updateScore();
+    updateIcons(playerChoice, computerChoice)
 
     if (checkWin()) {
         gameOver();
@@ -62,7 +66,34 @@ function handleChoice(playerChoice) {
 }
 
 function updateScore() {
-    scoreText.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
+    playerScoreText.textContent = `Player: ${humanScore}`;
+    computerScoreText.textContent = `Computer: ${computerScore}`;
+}
+
+function updateIcons(humanChoice, computerChoice) {
+    switch (humanChoice) {
+        case "rock":
+            playerIcon.textContent = "🪨";
+            break;
+        case "paper":
+            playerIcon.textContent = "📃";
+            break;
+        case "scissors":
+            playerIcon.textContent = "✂️";
+            break;
+     }
+
+    switch (computerChoice) {
+        case "rock":
+            computerIcon.textContent = "🪨";
+            break;
+        case "paper":
+            computerIcon.textContent = "📃";
+            break;
+        case "scissors":
+            computerIcon.textContent = "✂️";
+            break;
+    }
 }
 
 function gameOver() {

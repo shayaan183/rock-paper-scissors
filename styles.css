@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+    /* border: 1px solid black; */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}

@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div id="results">
-        <p id="score">Player: 0 | Computer: 0</p>
-        <p id="result"></p>
-    </div>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+        <h2>Rock Beats Scissors | Paper Beats Rock | Scissors Beats Paper</h2>
+        <h2>5 Points. Only One Winner.</h2>
+
+        <div class="choices">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+
+        <div id="scoreboard">
+            <div class="scores">
+                <div class="player-score">
+                    <h1 id="player-icon">❓</h1>
+                    <p id="player-score">Player: 0</p>
+                </div>
+                <div class="computer-score">
+                    <h1 id="computer-icon">❓</h1>
+                    <p id="computer-score">Computer: 0</p>
+                </div>
+            </div>
+            <p id="result">Waiting for your next move...</p>
+        </div>
+    </main>
     
-    <div id="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
+
+    <footer>
+        <p>Created by Shayaan Musthafa</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
