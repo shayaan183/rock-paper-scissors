@@ -17,18 +17,22 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice == computerChoice) {
-        return "It's a tie!";
+        return "The elements clash equally! Neither side yields.";
     } else if (
         (humanChoice == "ignis" && computerChoice == "terra") || 
         (humanChoice == "terra" && computerChoice == "aqua") || 
         (humanChoice == "aqua" && computerChoice == "ignis")
     ) {
         humanScore++;
-        return `You won this round, ${humanChoice} beats ${computerChoice}!`;
+        return `A mighty blow! ${capitalize(humanChoice)} reigns supreme over ${capitalize(computerChoice)}.`;
     } else {
         computerScore++;
-        return `You lost this round, ${computerChoice} beats ${humanChoice}!`;
+        return `The tides turn. ${capitalize(computerChoice)} prevails against ${capitalize(humanChoice)}.`;
     }
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function checkWin() {
@@ -98,9 +102,9 @@ function updateIcons(humanChoice, computerChoice) {
 
 function gameOver() {
     if (humanScore > computerScore) {
-        resultText.textContent = "You won the game! (Refresh to play again)";
+        resultText.innerHTML = "Victory is yours, Elementalist! The elements bend to your will.<br>(Restart to duel again)";
     } else {
-        resultText.textContent = "You lost the game! (Refresh to play again)";
+        resultText.innerHTML = "Defeat... The elemental forces have overcome you.<br>(Restart to reclaim your honor)";
     }
 
     ignisBtn.disabled = true;
