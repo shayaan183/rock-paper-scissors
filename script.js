@@ -5,11 +5,11 @@ function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
 
     if (computerChoice == 0) {
-        return "rock";
+        return "ignis";
     } else if (computerChoice == 1) {
-        return "paper";
+        return "aqua";
     } else {
-        return "scissors";
+        return "terra";
     }
 }
 
@@ -19,9 +19,9 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
         return "It's a tie!";
     } else if (
-        (humanChoice == "rock" && computerChoice == "scissors") || 
-        (humanChoice == "paper" && computerChoice == "rock") || 
-        (humanChoice == "scissors" && computerChoice == "paper")
+        (humanChoice == "ignis" && computerChoice == "terra") || 
+        (humanChoice == "terra" && computerChoice == "aqua") || 
+        (humanChoice == "aqua" && computerChoice == "ignis")
     ) {
         humanScore++;
         return `You won this round, ${humanChoice} beats ${computerChoice}!`;
@@ -35,18 +35,18 @@ function checkWin() {
     return humanScore == 5 || computerScore == 5;
 }
 
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors");
+const ignisBtn = document.querySelector("#ignis");
+const aquaBtn = document.querySelector("#aqua");
+const terraBtn = document.querySelector("#terra");
 const playerIcon = document.querySelector("#player-icon");
 const playerScoreText = document.querySelector("#player-score");
 const computerIcon = document.querySelector("#computer-icon");
 const computerScoreText = document.querySelector("#computer-score");
 const resultText = document.querySelector("#result");
 
-rockBtn.addEventListener('click', () => handleChoice("rock"));
-paperBtn.addEventListener('click', () => handleChoice("paper"));
-scissorsBtn.addEventListener('click', () => handleChoice("scissors"));
+ignisBtn.addEventListener('click', () => handleChoice("ignis"));
+aquaBtn.addEventListener('click', () => handleChoice("aqua"));
+terraBtn.addEventListener('click', () => handleChoice("terra"));
 
 function handleChoice(playerChoice) {
     if (checkWin()) {
@@ -72,26 +72,26 @@ function updateScore() {
 
 function updateIcons(humanChoice, computerChoice) {
     switch (humanChoice) {
-        case "rock":
-            playerIcon.textContent = "🪨";
+        case "ignis":
+            playerIcon.textContent = "🔥";
             break;
-        case "paper":
-            playerIcon.textContent = "📃";
+        case "aqua":
+            playerIcon.textContent = "💧";
             break;
-        case "scissors":
-            playerIcon.textContent = "✂️";
+        case "terra":
+            playerIcon.textContent = "🌿";
             break;
      }
 
     switch (computerChoice) {
-        case "rock":
-            computerIcon.textContent = "🪨";
+        case "ignis":
+            computerIcon.textContent = "🔥";
             break;
-        case "paper":
-            computerIcon.textContent = "📃";
+        case "aqua":
+            computerIcon.textContent = "💧";
             break;
-        case "scissors":
-            computerIcon.textContent = "✂️";
+        case "terra":
+            computerIcon.textContent = "🌿";
             break;
     }
 }
@@ -103,7 +103,7 @@ function gameOver() {
         resultText.textContent = "You lost the game! (Refresh to play again)";
     }
 
-    rockBtn.disabled = true;
-    paperBtn.disabled = true;
-    scissorsBtn.disabled = true;
+    ignisBtn.disabled = true;
+    aquaBtn.disabled = true;
+    terraBtn.disabled = true;
 }
