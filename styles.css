@@ -6,7 +6,7 @@
 
 body {
     font-family: "IM Fell French Canon SC", serif;
-    background-color: #282626;
+    background: url(images/asfalt-light.png), #1c1c1c;
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -25,6 +25,7 @@ header {
     font-size: 60px;
     letter-spacing: 5px;
     color: #b59410;
+    text-shadow: 0 0 30px #b59410;
 }
 
 .rules {
@@ -35,6 +36,7 @@ header {
 main {
     background-color: #00000099;
     border: 3px solid #b59410;
+    box-shadow: 0 0 20px #b59410;
     border-radius: 10px;
     max-width: 650px;
     width: 100%;
