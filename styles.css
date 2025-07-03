@@ -36,7 +36,7 @@ main {
     background-color: #00000099;
     border: 3px solid #b59410;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 650px;
     width: 100%;
     text-align: center;
     padding: 20px;
@@ -53,7 +53,8 @@ main {
 }
 
 .score {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #result {
@@ -71,7 +72,7 @@ main {
 button {
     font-family: "IM Fell French Canon SC", serif;
     padding: 15px 30px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 10px;
     background-color: #0e0d0d;
     color: #ffffff;
@@ -82,6 +83,10 @@ button {
 
 button:hover {
     transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 button:disabled {
