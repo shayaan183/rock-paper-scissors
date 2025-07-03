@@ -17,17 +17,17 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice == computerChoice) {
-        return "The elements clash equally! Neither side yields.";
+        return "⚔️ The elements clash equally! Neither side yields.";
     } else if (
         (humanChoice == "ignis" && computerChoice == "terra") || 
         (humanChoice == "terra" && computerChoice == "aqua") || 
         (humanChoice == "aqua" && computerChoice == "ignis")
     ) {
         humanScore++;
-        return `A mighty blow! ${capitalize(humanChoice)} reigns supreme over ${capitalize(computerChoice)}.`;
+        return `✨ A mighty blow! ${capitalize(humanChoice)} reigns supreme over ${capitalize(computerChoice)}.`;
     } else {
         computerScore++;
-        return `The tides turn. ${capitalize(computerChoice)} prevails against ${capitalize(humanChoice)}.`;
+        return `😓 The tides turn. ${capitalize(computerChoice)} prevails against ${capitalize(humanChoice)}.`;
     }
 }
 
@@ -104,9 +104,9 @@ function updateIcons(humanChoice, computerChoice) {
 
 function gameOver() {
     if (humanScore > computerScore) {
-        resultText.innerHTML = "Victory is yours, Elementalist! The elements bend to your will.<br>(Restart to duel again)";
+        resultText.innerHTML = "👑 Victory is yours, Elementalist! The elements bend to your will.<br>⚔️ Restart to duel again.";
     } else {
-        resultText.innerHTML = "Defeat... The elemental forces have overcome you.<br>(Restart to reclaim your honor)";
+        resultText.innerHTML = "☠️ Defeat... The elemental forces have overcome you.<br>⚔️ Restart to reclaim your honor.";
     }
 
     ignisBtn.disabled = true;
@@ -129,7 +129,7 @@ function restart() {
     playerIcon.textContent = "❓";
     computerIcon.textContent = "❓";
 
-    resultText.textContent = "The winds of fate await your command...";
+    resultText.textContent = "🔮 Destiny calls. The elements await your command... 🔥💧🌿";
     
     restartBtn.classList.add("hidden");
 }
