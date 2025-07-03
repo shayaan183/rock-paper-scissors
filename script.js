@@ -47,10 +47,12 @@ const playerScoreText = document.querySelector("#player-score");
 const computerIcon = document.querySelector("#computer-icon");
 const computerScoreText = document.querySelector("#computer-score");
 const resultText = document.querySelector("#result");
+const restartBtn = document.querySelector("#restart");
 
 ignisBtn.addEventListener('click', () => handleChoice("ignis"));
 aquaBtn.addEventListener('click', () => handleChoice("aqua"));
 terraBtn.addEventListener('click', () => handleChoice("terra"));
+restartBtn.addEventListener('click', () => restart());
 
 function handleChoice(playerChoice) {
     if (checkWin()) {
@@ -110,4 +112,24 @@ function gameOver() {
     ignisBtn.disabled = true;
     aquaBtn.disabled = true;
     terraBtn.disabled = true;
+
+    restartBtn.classList.remove("hidden");
+}
+
+function restart() {
+    humanScore = 0;
+    computerScore = 0;
+
+    updateScore();
+
+    ignisBtn.disabled = false;
+    aquaBtn.disabled = false;
+    terraBtn.disabled = false;
+
+    playerIcon.textContent = "❓";
+    computerIcon.textContent = "❓";
+
+    resultText.textContent = "The winds of fate await your command...";
+    
+    restartBtn.classList.add("hidden");
 }

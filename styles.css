@@ -95,6 +95,19 @@ button:disabled {
     filter: grayscale(75%);
 }
 
+.hidden {
+    display: none;
+}
+
+#restart {
+    border: 2px solid #b59410;
+    color: #b59410;
+}
+
+#restart:hover {
+    box-shadow: 0 0 20px #b59410;
+}
+
 #ignis {
     border: 2px solid #b22222;
     color: #b22222;
