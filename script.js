@@ -64,7 +64,7 @@ function handleChoice(playerChoice) {
     
     resultText.textContent = roundResult;
     updateScore();
-    updateIcons(playerChoice, computerChoice)
+    updateIcons(playerChoice, computerChoice);
 
     if (checkWin()) {
         gameOver();
